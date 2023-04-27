@@ -1,0 +1,248 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  background-color: #485274;
+}
+
+label {
+  text-decoration: none;
+}
+	
+	
+.header {
+  height: 80px;
+  width: 90%;
+  margin: 0 auto;
+  transition: transform 0.5s;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+.header::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.header.nav-is-visible {
+  transform: translateY(80px);
+}
+@media only screen and (min-width: 768px) {
+  .header.nav-is-visible {
+    transform: translateY(170px);
+  }
+}
+	
+	
+.nav-trigger {
+  position: relative;
+  float: right;
+  height: 45px;
+  width: 45px;
+  margin-top: 18px;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  color: transparent;
+}
+.nav-trigger span,
+.nav-trigger span::before,
+.nav-trigger span::after {
+  position: absolute;
+  width: 28px;
+  height: 3px;
+  background-color: #FFF;
+  backface-visibility: hidden;
+}
+.nav-trigger span {
+  top: 21px;
+  left: 8px;
+  transition: background 0.2s 0.5s;
+}
+.nav-trigger span::before, .nav-trigger span:after {
+  content: '';
+  left: 0;
+  transition: transform 0.2s 0.5s;
+}
+.nav-trigger span::before {
+  bottom: 8px;
+}
+.nav-trigger span::after {
+  top: 8px;
+}
+.nav-is-visible .nav-trigger span {
+  background-color: rgba(255, 255, 255, 0);
+}
+.nav-is-visible .nav-trigger span::before, .nav-is-visible .nav-trigger span::after {
+  background-color: white;
+}
+.nav-is-visible .nav-trigger span::before {
+  transform: translateY(8px) rotate(-45deg);
+}
+.nav-is-visible .nav-trigger span::after {
+  transform: translateY(-8px) rotate(45deg);
+}
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  background-color: #000000;
+  visibility: hidden;
+  perspective: 1000px;
+  transform: translateY(-100%);
+  transition: transform 0.5s 0s, visibility 0s 0.5s;
+}
+.nav-menu.nav-is-visible {
+  visibility: visible;
+  transform: translateY(0);
+  transition: transform 0.5s 0s, visibility 0.5s 0s;
+}
+@media only screen and (min-width: 768px) {
+  .nav-menu {
+    height: 170px;
+  }
+}
+
+.nav-main {
+  position: relative;
+  height: 100%;
+  list-style: none;
+  background-color: #343c55;
+
+}
+.nav-main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000000;
+  opacity: 1;
+  visibility: hidden;
+  transition: opacity 0.5s 0s, visibility 0.5s 0s;
+}
+.nav-main li {
+  height: 100%;
+  width: 33.33%;
+  float: left;
+}
+.nav-main li:first-of-type label::before {
+  background-image: url(../icon/icon-1.svg);
+}
+.nav-main li:nth-of-type(2) label::before {
+  background-image: url(../icon/icon-2.svg);
+}
+.nav-main li:nth-of-type(3) label::before {
+  background-image: url(../icon/icon-3.svg);
+}
+
+.nav-main label {
+  position: relative;
+  display: block;
+  height: 100%;
+  color: transparent;
+  transition: background-color 0.2s;
+}
+.nav-main label::before {
+  content: '';
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: 32px 64px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.nav-main label:hover {
+  background-color: #2b3145;
+}
+.nav-main .nav-selected label {
+  background-color: #212635;
+}
+.nav-main .nav-selected label:hover {
+  background-color: #212635;
+}
+.nav-main .nav-selected label::before {
+  background-position: 0 -32px;
+}
+
+.nav-is-visible .nav-main {
+  transform: translateZ(0);
+}
+.nav-is-visible .nav-main::after {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s 0s, visibility 0s 0.5s;
+}
+@media only screen and (min-width: 768px) {
+  .nav-main label {
+    padding: 7.6em 1em 0;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .nav-main label::before {
+    top: 4.4em;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}
+.nav-is-visible {
+  transform: translateZ(0);
+}
+	main {
+  transition: transform 0.5s;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+main.nav-is-visible {
+  transform: translateY(80px);
+}
+@media only screen and (min-width: 768px) {
+  main.nav-is-visible {
+    transform: translateY(170px);
+  }
+  main h1 {
+    font-size: 3.6rem;
+    margin: 4em auto;
+  }
+}

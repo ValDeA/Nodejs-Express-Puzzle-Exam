@@ -1,0 +1,149 @@
+/* Slider */
+#slide ul,li{ 
+	list-style:none;
+}
+#slide{
+	height: 50vw;
+	position:relative;
+	overflow:hidden;
+}
+#slide ul{
+	width:400%;
+	height:100%;
+	transition:1s;
+}
+#slide ul:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+#slide li{
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 1%;
+	float:left;
+	width:25%;
+	height:100%;
+}
+#slide li:nth-child(1){
+	background:#faa;
+}
+#slide li:nth-child(2){
+	background:#ffa;
+}
+#slide li:nth-child(3){
+	background:#faF;
+}
+#slide input{
+	display:none;
+}
+#pos1:checked~ul{
+	margin-left:0%;
+}
+#pos2:checked~ul{
+	margin-left:-100%;
+}
+#pos3:checked~ul{
+	margin-left:-200%;
+}
+
+/* Main Content */
+.main-view-label {
+	margin-left: 1%;
+	margin-right: 1%;
+	float: left;
+	width: 30%;
+	height: 100%;
+	
+	border: 1px solid white;
+	border-radius: 10px;
+}
+.main-view-label:hover {
+	border-color: black;
+	cursor: pointer;
+}
+.main-view-label after{
+	clear: both;
+}
+.img {
+	margin: 5%;
+	margin-bottom: 25%;
+	float: left;
+	width: 90%;
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 80%;
+	
+	background-size: cover;
+	border-radius: 10px;
+}
+.img after{
+	clear: both;
+}
+#img1 {
+		background-image: url(../icon/img1.jpg);
+}
+#img2 {
+		background-image: url(../icon/img2.jpg);
+}
+#img3 {
+		background-image: url(../icon/img3.jpg);
+}
+.main-view-label p {
+	display: block;
+	padding-bottom: 20%;
+	font-size: 3vw;
+}
+@media only screen and (min-width: 768px) {
+	
+}
+
+
+/* Modal */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+	
+/* Modal Content Box */
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 50%; /* Could be more or less, depending on screen size */                          
+}
+/* The Close Button */
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover, .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+	}
+#modalImg {
+	width: 100%;
+	height: auto;
+}
+p {
+	text-align: center;
+}
+
+/* Footer */
+footer {
+	position: absolute;
+	top: 95%;
+	left: 40%;
+}

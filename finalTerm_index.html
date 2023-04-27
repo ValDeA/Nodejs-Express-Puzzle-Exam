@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		FInal Term
+	</title>
+	<!-- CSS Link -->
+	<link type="text/css" rel="stylesheet" href="css/finalTerm_nav.css"></link>
+	<link type="text/css" rel="stylesheet" href="css/finalTerm_One.css"></link>
+	<link type="text/css" rel="stylesheet" href="css/finalTerm_Two.css"></link>
+	<link type="text/css" rel="stylesheet" href="css/finalTerm_Three.css"></link>
+</head>
+<body>
+	<!-- Header Area -->
+	<header class="header">
+		<a href="#0" class="nav-trigger">
+			Menu
+			<span></span>
+		</a>
+	</header> 
+	
+	<!-- Main Area -->
+	<main>
+	<div id="slide">
+	
+		<!-- Slider -->
+		<input type="radio" name="pos" id="pos1" checked>
+		<input type="radio" name="pos" id="pos2">
+		<input type="radio" name="pos" id="pos3">
+		
+		<ul class="slide">
+			<!-- Content One -->
+			<li class="main-view">
+				<label class="main-view-label" for="pos2" onclick="imgSrc('icon/img1.jpg'); imgClick();
+				">
+					<div class="img" id="img1"></div>
+					<p>튤립</p>
+				</label>
+				<label class="main-view-label" for="pos2" onclick="imgSrc('icon/img2.jpg'); imgClick()">
+					<div class="img" id="img2"></div>
+					<p>국화</p>
+				</label>
+				<label class="main-view-label" for="pos2" onclick="imgSrc('icon/img3.jpg'); imgClick()">
+					<div class="img" id="img3"></div>
+					<p>장미<p/>
+				</label>
+			</li>
+			<!-- Content Two -->
+			<li class="main-view">
+				<div class="bg"></div>
+			</li>
+			<!-- Content Three -->
+			<li class="main-view">
+				<svg width="300" height="300"></svg>
+			</li>
+		</ul>
+	</div>
+	</main>
+	
+	<!-- Navigation Area -->
+	<nav class="nav-menu">
+		<ul class="nav-main">
+			<li class="nav-selected">
+				<label for="pos1">Home</label>
+			</li>
+
+			<li>
+				<label id="tmplb" for="pos2">Puzzle</label>
+			</li>
+
+			<li>
+				<label for="pos3">LeaderBoard</label>
+			</li>
+		</ul>
+	</nav>
+
+	<!-- Footer Area -->
+	<footer>
+		<p class="qwe"> Here is Footer </p>
+	</footer>
+	
+	<!-- Hidden Area -->
+	<div class="sample">
+		<div class="crop" id="box0" onclick="boxMove(this)"></div>
+		<div class="crop" id="box1" onclick="boxMove(this)"></div>
+		<div class="crop" id="box2" onclick="boxMove(this)"></div>
+		<div class="crop" id="box3" onclick="boxMove(this)"></div>
+		<div class="crop" id="box4" onclick="boxMove(this)"></div>
+		<div class="crop" id="box5" onclick="boxMove(this)"></div>
+		<div class="crop" id="box6" onclick="boxMove(this)"></div>
+		<div class="crop" id="box7" onclick="boxMove(this)"></div>
+		<div class="cell" id="box8" onclick="boxMove(this)"></div>
+	</div>
+	
+	<!-- Modal -->
+	<div id="Modal" class="modal">
+	
+		<!-- Modal Content -->
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>그림 보기</p>
+			<img id="modalImg">
+		</div>
+	</div>
+	
+	<!-- Script Area  -->
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="js/finalTerm_d3.js"></script>
+	<script src="js/finalTerm_nav.js"></script>
+	<script src="js/finalTerm_Two.js"></script>
+	<script src="js/finalTerm_Modal.js"></script>
+</body>
+</html>

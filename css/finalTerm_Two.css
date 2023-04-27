@@ -1,0 +1,67 @@
+.bg {
+	margin: 0 auto;
+	padding-top: 5VW;
+	padding-left: 5VW;
+	background-color: #AAA;
+	width: 40VW;
+	height: 40VW;
+	
+	border: 1px solid #888;
+	border-radius: 1em;
+}
+.crop{
+	margin: 0;
+	width: 10VW;
+	height: 10VW;
+	
+	border: 1px solid #000;
+	
+	/* Div 가로로 정렬 */
+	float: left;
+	overflow: hidden;
+}
+.crop after {
+	clear: both;
+}
+.crop:hover {
+	cursor: pointer;
+}
+.cell {
+	margin: 0;
+	width: 10VW;
+	height: 10VW;
+	background-color: #FFF;
+	
+	border: 1px solid #000;
+	
+	/* Div 가로로 정렬 */
+	float: left;
+	position: relative;
+}
+#box0 {
+	background-position: left top;
+}
+#box1 {
+	background-position: center top;
+}
+#box2 {
+	background-position: right top;
+}
+#box3 {
+	background-position: left center;
+}
+#box4 {
+	background-position: center center;
+}
+#box5 {
+	background-position: right center;
+}
+#box6 {
+	background-position: left bottom;
+}
+#box7 {
+	background-position: center bottom;
+}
+.sample {
+	display: none;
+}
